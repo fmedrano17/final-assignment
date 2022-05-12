@@ -8,24 +8,20 @@ h1 {
     text-align: center;
 }
 
-.box {
-    background-color: white;
-    color: black;
-    border-radius: 1em;
-    margin: 0 auto;
-    width: auto;
-    min-width: 30em;
-    max-width: 40em;
-    height: auto;
-    overflow: auto;
-    text-align: center;
-    align-items: center;
-}
-
+.box,
 .info {
     text-align: center;
     margin: 0 auto;
     width: auto;
     min-width: 30em;
     max-width: 40em;
+}
+
+.box {
+    background-color: white;
+    color: black;
+    border-radius: 1em;
+    height: auto;
+    overflow: auto;
+    align-items: center;
 }
