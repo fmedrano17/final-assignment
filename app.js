@@ -14,7 +14,7 @@ submit.onclick = function(){
         }
 
         else {
-            alert("Invalid age. Please enter a vaild age")
+            alert("Invalid age. Please enter a vaild age.")
         }
     }
 
