@@ -4,6 +4,7 @@ const submit = document.getElementById("submit");
 const chart = document.getElementById("chart");
 const result = document.getElementById("result");
 
+// Checks for valid values and calculates age
 submit.onclick = function(){
 
     if (catName.value.length != 0) {
@@ -22,10 +23,12 @@ submit.onclick = function(){
     }
 }
 
+// Displays age-chart.txt in "result" div when "chart" btn is pressed
 chart.onclick = function() {
     ageChart();
 }
 
+// Numbers 0-2 have special ages and messages, every age after that is just 4 years added
 function calculate(){
 
     let catMsg = document.createElement('p');
@@ -56,6 +59,7 @@ function calculate(){
     }
 }
 
+// Reads age-chart.txt file w/ AJAX
 function ageChart() {
     const xhttp = new XMLHttpRequest();
     xhttp.onload = function() {
