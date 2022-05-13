@@ -8,6 +8,19 @@ h1 {
     text-align: center;
 }
 
+a {
+    color: white;
+}
+
+table {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+th {
+    padding: 0 1em;
+}
+
 .box,
 .info {
     text-align: center;
@@ -24,4 +37,13 @@ h1 {
     height: auto;
     overflow: auto;
     align-items: center;
+}
+
+#result {
+    color: blue;
+    font-weight: bold;
+}
+
+#result.div {
+    color: black;
 }

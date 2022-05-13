@@ -1,6 +1,7 @@
 const catAge = document.getElementById("age");
 const catName = document.getElementById("name");
 const submit = document.getElementById("submit");
+const chart = document.getElementById("chart");
 const result = document.getElementById("result");
 
 submit.onclick = function(){
@@ -21,36 +22,45 @@ submit.onclick = function(){
     }
 }
 
+chart.onclick = function() {
+    ageChart();
+}
+
 function calculate(){
 
-    let catMsg;
+    let catMsg = document.createElement('p');
 
     if (result.hasChildNodes()) {
         result.removeChild(result.firstChild);
     }
 
     if (catAge.value == 0) {
-        catMsg = document.createElement('p');
         catMsg.innerHTML = catName.value + " is 0 years old in human years! Who wudda thunk.";
         result.appendChild(catMsg);
     }
 
     else if (catAge.value == 1) {
-        catMsg = document.createElement('p');
-        catMsg.innerHTML = catName.value + " is 15 years old in human years! God help you..";
+        catMsg.innerHTML = catName.value + " is 15 years old in human years! They're getting big!";
         result.appendChild(catMsg);
     }
 
     else if (catAge.value == 2) {
-        catMsg = document.createElement('p');
         catMsg.innerHTML = catName.value + " is 24 years old in human years! They're all grown up!";
         result.appendChild(catMsg);
     }
 
     else {
         let humanAge = 24 + ((catAge.value-2) * 4);
-        catMsg = document.createElement('p');
-        catMsg.innerHTML = catName.value + " is " + humanAge + " years old! Awesome!";
+        catMsg.innerHTML = catName.value + " is " + humanAge + " years old in human years! Awesome!";
         result.appendChild(catMsg);
     }
+}
+
+function ageChart() {
+    const xhttp = new XMLHttpRequest();
+    xhttp.onload = function() {
+        document.getElementById("result").innerHTML = this.responseText;
+    }
+    xhttp.open("GET", "age-chart.txt");
+    xhttp.send();
 }
